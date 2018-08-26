@@ -17,3 +17,16 @@ Before '@ecommerce' do
     @mobile_phone = Faker::PhoneNumber.cell_phone
     @future_ref = Faker::Company.buzzword
 end
+
+After do |scenario|
+    scenario_name = scenario.name.gsub(/\s+/, '_').tr('/', '_')
+    if scenario.failed?
+        take_screenshot(scenario_name.downcase!, 'failed')
+        time = Time.new
+        puts 'Scenarios Atual  Failed == '+(scenario_name) +' Current Time : ' +(time.inspect)
+    else
+        take_screenshot(scenario_name.downcase!, 'passed')
+        time = Time.new
+        puts 'Scenarios Atual  Passed == '+(scenario_name) +' Current Time : ' +(time.inspect)
+    end
+end
