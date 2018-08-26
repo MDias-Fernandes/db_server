@@ -1,0 +1,14 @@
+app_url: 'http://www.automationpractice.com'
+
+user:
+  email: 'default_buyer_user@mailinator.com'
+  password: 'dbserver123!'
+  first_name: 'First'
+  last_name: 'Name'
+  complete_name: 'First Name'
+  company: 'dbServer'
+  neighborhood: 'Morumbi Berrini'
+  Street: 'São Paulo, Alabama 00000'
+  country: 'United States'
+  data_1: '999999999999'
+  data_2: '999999999999'
