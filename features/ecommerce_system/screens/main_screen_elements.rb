@@ -5,6 +5,7 @@ module Pages
         def elements_page
             {
                 header_logo: 'div[id="header_logo"]',
+                signin_btn: 'a[class="login"]',
                 search_box: 'input[id="search_query_top"]',
                 search_btn: 'button[name="submit_search"]',
                 page_item: 'div[class="product-container"]',
@@ -12,6 +13,10 @@ module Pages
                 product_name: '//span[contains(text(),"Blouse")]',
                 proceed_to_checkout: 'a[title="Proceed to checkout"]'
             }
+        end
+
+        def signin_account
+            find(elements_page[:signin_btn]).click
         end
 
         def verify_page

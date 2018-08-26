@@ -27,4 +27,8 @@ module Pages
     def payment
         Pages::Payment.new
     end
+
+    def create_account
+        Pages::CreateAccount.new
+    end
 end
