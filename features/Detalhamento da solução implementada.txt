@@ -1,0 +1,45 @@
+01 - Arquitetura
+
+#> Estrutura da pasta features possui a pasta com os arquivos associados aos testes (ecommerce_system)
+e a pasta com os arquivos associados às configurações para execução dos testes (support)
+
+#> ecommerce_system:
+    screens - arquivos *.rb com os elementos das telas de navegação e métodos de ação com tais elementos
+    specs - arquivos *.feature com a especificação do comportamento esperado na navegação
+    steps - sequenciamento das ações com a navegação esperada para validação do comportamento em arquivos *.rb
+
+#> support:
+    resources - arquivo *.yaml com dados que são usados nos testes
+        # Dados de usuários, ambientes e URIs, por exemplo
+    env.rb - arquivo com o gerenciamento das configurações gerais do teste, tais como:
+        # Instância das gems necessárias para execução dos testes
+        # Definição do diretório onde o chromeDriver está disponível
+        # Instância do arquivo *.yaml
+        # Configuração do WebDriver
+        # Configuração das capacidades desejadas do chrome
+        # Instância do método para realização de screenshots
+    hooks.rb - Instância das definições que serão usadas antes ou depois da inicialização de um teste:
+        # Dados que serão usados em um determindado teste
+        # Realizar screenshot ao finalizar a execução de qualquer cenário
+    spec_helper.rb - Instância das classes que possuem as referências dos elementos das telas
+
+#> Gemfile:
+    Arquivo para definição de todas as gems(dependências) que serão instaladas
+
+#> Gemfile.lock:
+    Definição das versões de todas as gems instaladas para que sejam as mesmas independente da plataforma que forem instaladas
+
+#> screenshots
+    'test_passed' e 'test_failed' - O screenshot será armazenado em uma das pastas com base no resultado da execução do teste
+    'run_yyyy_mm_dd' - Dia da execução do teste
+    'file.png' - Screenshot gerado ao final da execução do teste, o nome é definido com base no nome do cenário que foi executado
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+02 - Pontos observados durante a realização do teste técnico e sugestões de estratégia de testes
+OBS.: As opiniões expressas aqui, referem-se a situações que podem ocorrer no cotidiano de várias organizações
+
+#> Site objeto do teste muito instável e com pouca estrutura para testes automatizados baseado em avaliação de comportamento
+    - Sugiro aumento dos testes nos níveis unitários e de integração
+    - Alinhamento com a equipe de desenvolvimento para desenvolvimento dos elementos em tela com atributos únicos
+    - Testes baseados em comportamento seriam utilizados para validar os fluxos já que os dados podem ser validados nos níveis de integração

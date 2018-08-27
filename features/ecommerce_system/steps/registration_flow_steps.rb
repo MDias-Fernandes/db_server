@@ -15,7 +15,7 @@ When("input my personal information") do
     find(create_account.elements_page[:address1]).send_keys(@address)
     find(create_account.elements_page[:city]).send_keys(@city)
     #Comentário no DOM: <!-- if customer hasn't update his layout address, country has to be verified but it's deprecated -->
-    #find(:xpath, create_account.elements_page[:state]).select(@state)
+    find(:xpath, create_account.elements_page[:state]).select(@state)
     find(create_account.elements_page[:zip_code]).send_keys(@zip_code)
     find(create_account.elements_page[:mobile_phone]).send_keys(@mobile_phone)
     sleep(5)

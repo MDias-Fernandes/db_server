@@ -22,7 +22,7 @@ module Pages
                 address1: 'input[id="address1"]',
                 address2: 'input[id="address2"]',
                 city: 'input[id="city"]',
-                state: 'div[id="uniform-id_state"] select[id="id_state"]',
+                state: '//div[@id="uniform-id_state"]//select[@id="id_state"]',
                 zip_code: 'input[id="postcode"]',
                 country: 'select[id="id_country"]',
                 add_info: 'textarea[id="other"]',
